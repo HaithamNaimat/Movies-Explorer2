@@ -1,0 +1,18 @@
+Project: Movies Explorer - MERN Stack Application
+Course: Web Applications Programming and Engineering
+
+Group Members:
+1. [Student Name 1] - [Student ID 1]
+2. [Student Name 2] - [Student ID 2]
+
+GitHub Repository (Frontend):
+https://github.com/[username]/movies-frontend
+
+GitHub Repository (Backend):
+https://github.com/[username]/movies-api
+
+Deployed React Frontend (Render.com):
+https://movies-frontend.onrender.com
+
+Deployed Express API (Render.com):
+https://movies-api.onrender.com
