@@ -7,6 +7,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+if (!process.env.MONGO_URI) {
+  process.env.MONGO_URI = 'mongodb+srv://haitham:Test1234@cluster0.spfaru3.mongodb.net/movies-app';
+}
+if (!process.env.SESSION_SECRET) {
+  process.env.SESSION_SECRET = 'your-super-secret-session-key-change-in-production';
+}
+
 import authRoutes from './routes/auth.js';
 import movieRoutes from './routes/movies.js';
 import { logPostRequest } from './middleware/logger.js';
