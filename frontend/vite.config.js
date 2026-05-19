@@ -5,7 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000'
+      '/api': {
+        target: 'https://movies-explorer2-1.onrender.com',
+        changeOrigin: true,
+        secure: true
+      }
     }
   }
 })

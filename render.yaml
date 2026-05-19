@@ -1,0 +1,25 @@
+services:
+  - type: web_service
+    name: movies-explorer-backend
+    env: node
+    root: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        value: ""
+      - key: MONGO_URI
+        value: ""
+      - key: PORT
+        value: "5000"
+      - key: CLIENT_URL
+        value: https://movies-explorer-frontend.onrender.com
+
+  - type: static_site
+    name: movies-explorer-frontend
+    root: frontend
+    buildCommand: npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://movies-explorer-backend.onrender.com
