@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
   }
 
   async function logout() {
-    await fetch(`${API}/auth/logout`, {
+    await fetch(`${API}/api/auth/logout`, {
       method: 'POST',
       credentials: 'include'
     });
