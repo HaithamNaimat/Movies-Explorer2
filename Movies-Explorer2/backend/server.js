@@ -21,6 +21,11 @@ app.use(cors({
 app.use(express.json());
 app.use(logPostRequest);
 
+// In production behind a proxy (e.g. Render), trust the first proxy so secure cookies work
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 app.use(session({
   secret: process.env.SESSION_SECRET || 'fallback-secret-key',
   resave: false,
@@ -31,8 +36,8 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,
-    secure: false,
-    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     maxAge: 1000 * 60 * 60 * 24
   }
 }));

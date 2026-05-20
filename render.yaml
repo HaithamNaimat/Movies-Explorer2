@@ -2,7 +2,7 @@ services:
   - type: web_service
     name: movies-explorer-backend
     env: node
-    root: backend
+    root: Movies-Explorer2/backend
     buildCommand: npm install
     startCommand: node server.js
     envVars:
@@ -13,13 +13,13 @@ services:
       - key: PORT
         value: "5000"
       - key: CLIENT_URL
-        value: https://movies-explorer-frontend.onrender.com
+        value: https://movies-explorer2-2.onrender.com
 
   - type: static_site
     name: movies-explorer-frontend
-    root: frontend
+    root: Movies-Explorer2/frontend
     buildCommand: npm run build
     publishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://movies-explorer-backend.onrender.com
+        value: https://movies-explorer2-3.onrender.com/api
