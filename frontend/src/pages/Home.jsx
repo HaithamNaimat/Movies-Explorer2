@@ -19,7 +19,7 @@ function Home() {
       setMovies([]);
       return;
     }
-    fetch(`${API}/movies`, { credentials: 'include' })
+    fetch(`${API}/api/movies`, { credentials: 'include' })
       .then(res => res.ok ? res.json() : [])
       .then(data => setMovies(data.movies || []))
       .catch(() => setMovies([]))
