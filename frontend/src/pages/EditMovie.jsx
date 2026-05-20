@@ -14,7 +14,7 @@ function EditMovie() {
 
   useEffect(() => {
     if (!user) { navigate('/login'); return; }
-    fetch(`${API}/movies/${id}`, { credentials: 'include' })
+    fetch(`${API}/api/movies/${id}`, { credentials: 'include' })
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data || !data.movie) throw new Error('Movie not found');
@@ -33,7 +33,7 @@ function EditMovie() {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch(`${API}/movies/${id}`, {
+      const res = await fetch(`${API}/api/movies/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
