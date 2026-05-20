@@ -23,7 +23,7 @@ function AddMovie() {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch(`${API}/movies`, {
+      const res = await fetch(`${API}/api/movies`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
